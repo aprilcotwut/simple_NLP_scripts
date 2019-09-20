@@ -1,0 +1,5 @@
+String before preprocessing: 
+cat Cat CAT dog doG meow 300 300
+Array after preprocessing: 
+['cat', 'cat', 'cat', 'dog', 'dog']
+Testing get_ngrams()...Test passed!
