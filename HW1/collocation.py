@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # collocation.py: This script finds collocations in the given amazon
 #   reviews corpus. First, purely frequency is used as a measure then
