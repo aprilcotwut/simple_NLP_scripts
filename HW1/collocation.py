@@ -147,6 +147,9 @@ def run_test(words):
     file.close()
 
 
+# # # # # # # # # # # # # # # #
+### Main Script Starts Here ###
+# # # # # # # # # # # # # # # #
 
 # # # Clean the corpus
 print('Beginning preprocessing...')
