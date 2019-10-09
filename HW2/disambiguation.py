@@ -3,7 +3,9 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # disambiguation.py: This script disambiguates a few word pairs using
-#   either a Naive Bayes classifier or [EDIT] classifier.
+#   a Naive Bayes classifier. This script is acompanied by a similarly
+#   named R script which classifies wordpairs using wildcard ML
+#   classifiers, including some not discussed in class "for the lols"
 #
 # Author: April Walker
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -78,8 +80,8 @@ def wordpair_context(wordpairs, words, n):
     for pair in wordpairs:
         for my_word in pair:
             # declare filenames
-            train_file = '_'.join([my_word, "training.txt"])
-            test_file = '_'.join([my_word, "testing.txt"])
+            train_file = '_'.join([my_word, 'training.txt'])
+            test_file = '_'.join([my_word, 'testing.txt'])
             # get context
             context = get_context(my_word, words, n)
             # train/test split
@@ -109,16 +111,19 @@ print((end - start), 'seconds elapsed')
 # # # Step 1: Extract and save wordpairs
 
 # indicate wordpairs of interest here
-wordpairs = [("night", "seat"),
-             ("kitchen", "cough"),
-             ("car", "bike"),
-             ("manufacturer", "bike"),
-             ("big", "small"),
-             ("huge", "heavy")]
+wordpairs = [('night', 'seat'),
+             ('kitchen', 'cough'),
+             ('car', 'bike'),
+             ('manufacturer', 'bike'),
+             ('big', 'small'),
+             ('huge', 'heavy')]
 
 # extract and save (only call this once...)
 wordpair_context(wordpairs, words, 10)
 
+# # #
+# This loop contains the dataset prep AND classifer training/testing
+# # #
 for pair in wordpairs:
     # # #
     # Step 2: Prep out train/test datasets
@@ -126,16 +131,17 @@ for pair in wordpairs:
     train = pd.DataFrame()
     test = pd.DataFrame()
     truth = pd.DataFrame() # a copy of the test dataset with the true target
+
     for word in pair:
         # declare filenames to grab context
-        train_file = '_'.join([word, "training.txt"])
-        test_file = '_'.join([word, "testing.txt"])
+        train_file = '_'.join([word, 'training.txt'])
+        test_file = '_'.join([word, 'testing.txt'])
         # get context
         new_train = pd.read_csv(train_file, delimiter=' ', header=None)
         new_test = pd.read_csv(test_file, delimiter=' ', header=None)
         # append true target value
-        new_train["target"] = word
-        new_test["target"] = word
+        new_train['target'] = word
+        new_test['target'] = word
         # append dataframes to train/truth sets
         train = train.append(new_train)
         truth = truth.append(new_test)
@@ -143,18 +149,12 @@ for pair in wordpairs:
     train = train.sample(frac=1)
     truth = truth.sample(frac=1)
     # drop our known target for our test set
-    test = truth.drop(["target"], axis=1)
+    test = truth.drop(['target'], axis=1)
 
     # # #
     # Step 3: Training our classifiers. On top our standard naive bayes I'm
-    #   going to try out some wild card ML classifiers. Because I expect these
-    #   to take longer, I'll only test them out on a few instances of my
-    #   word pairs.
+    #   going to try out some wild card ML classifiers in R.
     # # #
-    wildcard_wordpairs = [("car", "bike"),
-                          ("big", "small"),
-                          ("huge", "heavy")]
-
 
     # While unecessary, I will save the classifer output to a txt for
     # curiosities sake... It might be neat to see *where* my classifiers

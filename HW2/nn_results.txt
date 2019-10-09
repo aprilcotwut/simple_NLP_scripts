@@ -1,0 +1,37 @@
+
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.4522347517723:
+       night seat    Error     Rate
+night    106    1 0.009346   =1/107
+seat      16   27 0.372093   =16/43
+Totals   122   28 0.113333  =17/150
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.686235165873576:
+        cough kitchen    Error   Rate
+cough       0       2 1.000000   =2/2
+kitchen     0      20 0.000000  =0/20
+Totals      0      22 0.090909  =2/22
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.244593211564902:
+       bike car    Error     Rate
+bike      0  20 1.000000   =20/20
+car       0 642 0.000000   =0/642
+Totals    0 662 0.030211  =20/662
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.300233386299787:
+             bike manufacturer    Error    Rate
+bike           11            9 0.450000   =9/20
+manufacturer    1           19 0.050000   =1/20
+Totals         12           28 0.250000  =10/40
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.3121064554104:
+       big small    Error      Rate
+big    159   122 0.434164  =122/281
+small   42   195 0.177215   =42/237
+Totals 201   317 0.316602  =164/518
+
+Confusion Matrix (vertical: actual; across: predicted)  for max f1 @ threshold = 0.49989352838835:
+       heavy huge    Error     Rate
+heavy     80   18 0.183673   =18/98
+huge      15  110 0.120000  =15/125
+Totals    95  128 0.147982  =33/223
