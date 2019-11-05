@@ -1,0 +1,24 @@
+       night  seat
+night     73    34
+seat      32    11
+0.56
+         kitchen  cough
+kitchen        0      2
+cough          5     15
+0.681818181818182
+      car  bike
+car     0    20
+bike    7   635
+0.959214501510574
+              manufacturer  bike
+manufacturer            10    10
+bike                    10    10
+0.5
+       big  small
+big    164    117
+small  137    100
+0.5096525096525096
+       huge  heavy
+huge     38     60
+heavy    49     76
+0.5112107623318386

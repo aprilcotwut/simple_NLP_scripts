@@ -107,7 +107,7 @@ def filter_bigrams(bigram_dict):
             delete = True
         # if bigram contains stopword, delete
         for word in tokens:
-            if word in stop_words:
+            if word not in stop_words:
                 delete = True
         if delete:
             del bigram_dict[key]
