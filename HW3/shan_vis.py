@@ -315,3 +315,5 @@ true_bigrams = dict(true_bigrams)
 
 # Testing
 run_test(true_bigrams, norm_bigrams, unigrams)
+
+# fin #
